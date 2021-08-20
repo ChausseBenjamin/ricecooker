@@ -33,7 +33,7 @@ locale-gen
 echo $locale | sed "s/\(.*\)\s.*$/LANG=\1.UTF-8/g" > /etc/locale.conf
 
 # You love canday don't you?
-sed -i "s/\(\[options\]\)/\1\nILoveCandy\nColor/"
+sed -i "s/\(\[options\]\)/\1\nILoveCandy\nColor/" /etc/pacman.conf
 
 # Setup hostname
 echo "$hostname" > /etc/hostname
