@@ -3,15 +3,15 @@
 source ./prefs.sh
 
 # Defaults (if they aren't set previously)
-[ -z $hostname ]  && hostname="hostname"
-[ -z $user ]      && user="master"
-[ -z $groups ]    && groups="wheel"
-[ -z $posix ]     && posix="bash"
-[ -z $shell ]     && shell="bash"
-[ -z $locales ]   && locales="en_US"
-[ -z $timezone ]  && timezone="America/Toronto"
-[ -z $uefi ]      && uefi=0
-# [ -z $<++> ]     && <++>=<++>
+[ -z "$hostname" ]  && hostname="hostname"
+[ -z "$user" ]      && user="master"
+[ -z "$groups" ]    && groups="wheel"
+[ -z "$posix" ]     && posix="bash"
+[ -z "$shell" ]     && shell="bash"
+[ -z "$locales" ]   && locales="en_US"
+[ -z "$timezone" ]  && timezone="America/Toronto"
+[ -z "$uefi" ]      && uefi=0
+# [ -z "$<++>" ]     && <++>=<++>
 
 # Double checking parameters:
 # Check if uefi or not
