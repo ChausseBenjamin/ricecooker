@@ -32,4 +32,7 @@ basestrap /mnt $basepkgs
 fstabgen -U /mnt >> /mnt/etc/fstab
 
 # Copy this installer to the main machine to resume installation
-cp "$(pwd)" /mnt/root/
+cp -r "$(pwd)" /mnt/root/
+
+echo Initial setup should be done now...
+echo You can now \`artix-chroot /mnt\`
