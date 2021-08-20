@@ -17,13 +17,13 @@ which "$editor" &> /dev/null || editor="vi"
 $editor /etc/pacman.d/mirrorlist
 
 # Add proprietary drivers if desired
-proprietary && basepkgs="$basepkgs linux-firmware"
+chck $proprietary && basepkgs="$basepkgs linux-firmware"
 
 # Check if the system actually is uefi
 ls /sys/firmware/efi/efivars &> /dev/null || uefi=1
 
 # Add uefi components to basepkg (but only if needed)
-$uefi && basepkgs="$basepkgs efibootmgr"
+chck $uefi && basepkgs="$basepkgs efibootmgr"
 
 # Install the system
 basestrap /mnt "$basepkgs"

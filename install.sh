@@ -50,7 +50,7 @@ grubcfg="--target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB"
 # Verify the system is indeed uefi
 ls /sys/firmware/efi/efivars &> /dev/null || uefi=1
 # Change the grubcfg command if it is not the case
-$uefi || grubcfg="--recheck /dev/$( lsblk -l | grep boot | sed "s/\s.*//g")"
+chck $uefi || grubcfg="--recheck /dev/$( lsblk -l | grep boot | sed "s/\s.*//g")"
 
 # Install grub
 grub-install "$grubcfg"

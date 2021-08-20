@@ -12,3 +12,8 @@ editor="vim"
 locales="en_CA fr_CA"
 timezone="America/Toronto"
 proprietary=0
+
+# This function will be used in both scripts so I put it here...
+chck() {
+  return $1
+}
