@@ -53,7 +53,7 @@ ls /sys/firmware/efi/efivars &> /dev/null || uefi=1
 chck $uefi || grubcfg="--recheck /dev/$( lsblk -l | grep boot | sed "s/\s.*//g")"
 
 # Install grub
-grub-install "$grubcfg"
+grub-install $grubcfg
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Finishing touches
