@@ -26,7 +26,7 @@ ls /sys/firmware/efi/efivars &> /dev/null || uefi=1
 chck $uefi && basepkgs="$basepkgs efibootmgr"
 
 # Install the system
-basestrap /mnt "$basepkgs"
+basestrap /mnt $basepkgs
 
 # Configure the fstab
 fstabgen -U /mnt >> /mnt/etc/fstab
