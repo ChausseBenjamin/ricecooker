@@ -30,7 +30,7 @@ for lang in $locales; do
   sed -i "s/.$lang/$lang/g" /etc/locale.gen
 done
 locale-gen
-echo $locale | sed "s/\(.*\)\s.*$/LANG=\1.UTF-8/g" > /etc/locale.conf
+echo "LANG=$(echo $locale | sed "s/\s.*//g").UTF-8" > /etc/locale.conf
 
 # You love canday don't you?
 sed -i "s/\(\[options\]\)/\1\nILoveCandy\nColor/" /etc/pacman.conf
